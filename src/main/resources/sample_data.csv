@@ -1,0 +1,4 @@
+deal_unique_id,from_currency,to_currency,deal_timestamp,deal_amount
+D001,USD,EUR,2025-11-27T15:30:00,1000.50
+D002,EUR,GBP,2025-11-27T16:00:00,2500.00
+D003,JPY,USD,2025-11-27T16:30:00,500000
