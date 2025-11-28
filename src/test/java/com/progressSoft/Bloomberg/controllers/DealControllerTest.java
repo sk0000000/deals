@@ -3,6 +3,7 @@ package com.progressSoft.Bloomberg.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.progressSoft.Bloomberg.dtos.DealDto;
 import com.progressSoft.Bloomberg.exceptions.DealNotFoundException;
+import com.progressSoft.Bloomberg.exceptions.InvalidDealFieldException;
 import com.progressSoft.Bloomberg.services.DealService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -64,7 +65,7 @@ class DealControllerTest {
     @Test
     void createDeal_duplicate_throwsException() throws Exception {
         Mockito.when(dealService.createDeal(any(DealDto.class)))
-                .thenThrow(new IllegalArgumentException("Deal with ID D100 already exists."));
+                .thenThrow(new InvalidDealFieldException("Deal with ID D100 already exists."));
 
         mockMvc.perform(post("/deals")
                         .contentType(MediaType.APPLICATION_JSON)
