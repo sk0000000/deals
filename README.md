@@ -1,4 +1,4 @@
-# Spring Boot MySQL Docker Project
+# Deals Bloomberg Api Project
 
 ## Project Description
 This project focuses on developing a **Deal Management API** as part of a Bloomberg engineering team.
