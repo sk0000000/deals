@@ -8,3 +8,15 @@ services:
       MYSQL_DATABASE: bloomberg_db
     ports:
       - "3306:3306"
+  deals-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: deals-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/bloomberg_db
+      SPRING_PROFILES_ACTIVE: dev
+    depends_on:
+      - db
